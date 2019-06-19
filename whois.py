@@ -11,13 +11,13 @@ page_soup = soup(page_html,'html.parser')
 con=page_soup.findAll("div",{"class":"whois_main_column"})
 co=con[0].findAll("div",{"class":"df-block"})
 filename="domain.csv"
-f = open(filename, "a")
+f = open(filename, "w")
 
 for i in range(0,len(co)):
 	#print(containers[i].text+" "+container[i].text)
 	header = co[i].findAll("div",{"class":"df-heading"})
 	f.write(header[0].text+"\n")
-	print(header[0].text)	
+	print(header[0].text.upper())	
 	label  = co[i].findAll("div",{"class":"df-label"})
 	values = co[i].findAll("div",{"class":"df-value"})
 	for j in range(0,len(label)):
