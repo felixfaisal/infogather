@@ -26,7 +26,7 @@ for i in range(0,len(co)):
 	values = co[i].findAll("div",{"class":"df-value"})
 	for j in range(0,len(label)):
 		print(label[j].text+" "+values[j].text)
-		f.write(label[j].text.replace(",","")+","+values[j].text.replace(",","")+"\n")
+		f.write(label[j].text.replace(":","")+","+values[j].text.replace(",","")+"\n")
 	
 	print("\n")
 	f.write("\n")
