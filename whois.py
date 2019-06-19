@@ -1,5 +1,8 @@
 from urllib.request import urlopen as uReq
 from bs4 import BeautifulSoup as soup
+import datetime
+currentDT = datetime.datetime.now()
+time = str(currentDT)
 my_url ='https://www.whois.com/whois/'
 url =input("Enter domain name :")
 newurl = my_url+url
@@ -12,7 +15,8 @@ con=page_soup.findAll("div",{"class":"whois_main_column"})
 co=con[0].findAll("div",{"class":"df-block"})
 filename="domain.csv"
 f = open(filename, "w")
-
+print("Performing scraping at " + time + "\n")
+f.write("Obtained information at " + time + "\n")
 for i in range(0,len(co)):
 	#print(containers[i].text+" "+container[i].text)
 	header = co[i].findAll("div",{"class":"df-heading"})
