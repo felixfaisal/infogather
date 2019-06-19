@@ -14,7 +14,7 @@ page_soup = soup(page_html,'html.parser')
 con=page_soup.findAll("div",{"class":"whois_main_column"})
 co=con[0].findAll("div",{"class":"df-block"})
 filename="domain.csv"
-f = open(filename, "w")
+f = open(filename, "a")
 print("Information as on " + time + "\n")
 f.write("Obtained information at " + time + "\n")
 for i in range(0,len(co)):
