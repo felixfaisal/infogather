@@ -11,7 +11,7 @@ page_soup = soup(page_html,'html.parser')
 con=page_soup.findAll("div",{"class":"whois_main_column"})
 co=con[0].findAll("div",{"class":"df-block"})
 filename="domain.csv"
-f = open(filename, "w")
+f = open(filename, "a")
 
 for i in range(0,len(co)):
 	#print(containers[i].text+" "+container[i].text)
@@ -25,7 +25,9 @@ for i in range(0,len(co)):
 		f.write(label[j].text.replace(",","")+","+values[j].text.replace(",","")+"\n")
 	
 	print("\n")
-	
+	f.write("\n")
+
+f.write("\n")	
 f.close()
 			
 
